@@ -12,9 +12,19 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        ReachabilityService.shared.reachabilityStateChanged = { state in
+            switch state {
+            case .reachable:
+                print("Network reachable")
+            case .unreacahble:
+                print("Network unreachable")
+            }
+        }
+        
+        print(ReachabilityService.isCellular)
+        print(ReachabilityService.isWIFI)
+        print(ReachabilityService.networkString)
+        print(ReachabilityService.isNetworkAvailable)        
     }
-
-
 }
 

@@ -51,6 +51,7 @@ enum CellularType{
 
 extension Reachability{
     func getCellularType() -> CellularType{
+        //print(CTTelephonyNetworkInfo().serviceCurrentRadioAccessTechnology ?? "nill")
         guard let currentRadioAccessTechnology = CTTelephonyNetworkInfo().currentRadioAccessTechnology else { return .unknown }
         switch currentRadioAccessTechnology {
         case CTRadioAccessTechnologyGPRS,
@@ -73,57 +74,3 @@ extension Reachability{
     }
 }
 
-@objc class NetworkManager: NSObject{
-    static let shared = NetworkManager()
-    private override init() {
-        super.init()
-        startNotify()
-    }
-    let reachability = Reachability()!
-    private var cellularType : String? = nil
-    
-    @objc func isNetWork() -> Bool{
-        return reachability.connection != .none
-    }
-    
-    @objc func isWifi() -> Bool{
-        return reachability.connection == .wifi
-    }
-    
-    @objc func isCellular() -> Bool{
-        return reachability.connection == .cellular
-    }
-    
-    @objc func stringFromNetWork() -> String{
-        if isCellular(){
-            if self.cellularType == nil{
-                self.cellularType = reachability.getCellularType().string
-            }
-            if let type = self.cellularType{
-                return type
-            }
-        }
-        return "wifi"
-    }
-    
-    private func startNotify(){
-        reachability.whenReachable = { reachability in
-            if reachability.connection == .wifi {
-                print("Reachable via WiFi")
-            } else {
-                self.cellularType = nil
-                print("Reachable via Cellular")
-            }
-        }
-        reachability.whenUnreachable = { _ in
-            self.cellularType = nil
-            print("Not reachable")
-        }
-        
-        do {
-            try reachability.startNotifier()
-        } catch {
-            print("Unable to start notifier")
-        }
-    }
-}
