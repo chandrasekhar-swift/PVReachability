@@ -64,23 +64,21 @@ import Foundation
         reachability.whenReachable = { reachability in
             self.reachabilityStateChanged(.reachable)
             if reachability.connection == .wifi {
-                print("Reachable via WiFi")
             } else {
                 self.cellularType = nil
-                print("Reachable via Cellular")
             }
         }
         reachability.whenUnreachable = { _ in
             self.reachabilityStateChanged(.unreacahble)
 
             self.cellularType = nil
-            print("Not reachable")
+           // print("Not reachable")
         }
         
         do {
             try reachability.startNotifier()
         } catch {
-            print("Unable to start notifier")
+            //print("Unable to start notifier")
         }
     }
 }
