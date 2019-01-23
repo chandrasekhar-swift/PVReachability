@@ -8,12 +8,12 @@
 
 import Foundation
 
-@objc enum ReachabilityState: Int{
+@objc public enum ReachabilityState: Int{
     case reachable = 1
     case unreacahble
 }
 
-@objc class ReachabilityService: NSObject{
+@objc public class ReachabilityService: NSObject{
     static let shared = ReachabilityService()
     private override init() {
         super.init()
