@@ -1,18 +1,17 @@
 Pod::Spec.new do |s|
   s.name             = 'PVReachability'
-  s.version          = '0.1.2'
-  s.summary          = 'Reachability V0.1.2'
+  s.version          = '0.1.3'
+  s.summary          = 'Reachability Helper with network names & block notifier'
   s.description      = <<-DESC
-• Now you can access network flags using class methods
-        print(ReachabilityService.isCellular)
-        print(ReachabilityService.isWIFI)
-        print(ReachabilityService.networkString)
-        print(ReachabilityService.isNetworkAvailable)
 • Now you can get network state change as block
-ReachabilityService.shared.reachabilityStateChanged = { state in
+    let notifier = PVReachabilityNotifier()
+    notifier.notify = { state in
             switch state {
             case .reachable:
-                print("Network reachable")
+                print(PVReachabilityService.isCellular)
+                print(PVReachabilityService.isWIFI)
+                print(PVReachabilityService.networkString)
+                print(PVReachabilityService.isNetworkAvailable)
             case .unreacahble:
                 print("Network unreachable")
             }
