@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'PVReachability'
-  s.version          = '0.1.1'
-  s.summary          = 'Reachability V0.1.1'
+  s.version          = '0.1.2'
+  s.summary          = 'Reachability V0.1.2'
   s.description      = <<-DESC
 • Now you can access network flags using class methods
         print(ReachabilityService.isCellular)

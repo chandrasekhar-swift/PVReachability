@@ -9,22 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    let notifier = PVReachabilityNotifier()
     override func viewDidLoad() {
         super.viewDidLoad()
-        ReachabilityService.shared.reachabilityStateChanged = { state in
+        
+        notifier.notify = { state in
             switch state {
             case .reachable:
-                print("Network reachable")
+                print(PVReachabilityService.isCellular)
+                print(PVReachabilityService.isWIFI)
+                print(PVReachabilityService.networkString)
+                print(PVReachabilityService.isNetworkAvailable)
             case .unreacahble:
                 print("Network unreachable")
             }
         }
-        
-        print(ReachabilityService.isCellular)
-        print(ReachabilityService.isWIFI)
-        print(ReachabilityService.networkString)
-        print(ReachabilityService.isNetworkAvailable)        
     }
 }
 

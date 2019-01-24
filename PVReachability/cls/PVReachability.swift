@@ -1,10 +1,11 @@
 /*
-Copyright (c) 2014, Ashley Mills
-All rights reserved.
+ //  Created by chandra sekhar p on 23/01/19.
+ //  Copyright © 2019 chandra sekhar p. All rights reserved.
+ //
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
-
+ 
 1. Redistributions of source code must retain the above copyright notice, this
 list of conditions and the following disclaimer.
 
@@ -46,14 +47,14 @@ func callback(reachability:SCNetworkReachability, flags: SCNetworkReachabilityFl
 
     guard let info = info else { return }
     
-    let reachability = Unmanaged<Reachability>.fromOpaque(info).takeUnretainedValue()
+    let reachability = Unmanaged<PVReachability>.fromOpaque(info).takeUnretainedValue()
     reachability.reachabilityChanged()
 }
 
-public class Reachability {
+public class PVReachability {
 
-    public typealias NetworkReachable = (Reachability) -> ()
-    public typealias NetworkUnreachable = (Reachability) -> ()
+    public typealias NetworkReachable = (PVReachability) -> ()
+    public typealias NetworkUnreachable = (PVReachability) -> ()
 
     @available(*, unavailable, renamed: "Conection")
     public enum NetworkStatus: CustomStringConvertible {
@@ -173,7 +174,7 @@ public class Reachability {
     }
 }
 
-public extension Reachability {
+public extension PVReachability {
     
     // MARK: - *** Notifier methods ***
     func startNotifier() throws {
@@ -181,7 +182,7 @@ public extension Reachability {
         guard !notifierRunning else { return }
         
         var context = SCNetworkReachabilityContext(version: 0, info: nil, retain: nil, release: nil, copyDescription: nil)
-        context.info = UnsafeMutableRawPointer(Unmanaged<Reachability>.passUnretained(self).toOpaque())        
+        context.info = UnsafeMutableRawPointer(Unmanaged<PVReachability>.passUnretained(self).toOpaque())
         if !SCNetworkReachabilitySetCallback(reachabilityRef, callback, &context) {
             stopNotifier()
             throw ReachabilityError.UnableToSetCallback
@@ -262,7 +263,7 @@ public extension Reachability {
     }
 }
 
-fileprivate extension Reachability {
+fileprivate extension PVReachability {
     
     func reachabilityChanged() {
         guard previousFlags != flags else { return }

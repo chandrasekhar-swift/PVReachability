@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B01255C621F7914500B6328A /* Reachability+extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01255C421F7914400B6328A /* Reachability+extra.swift */; };
-		B01255C721F7914500B6328A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01255C521F7914400B6328A /* Reachability.swift */; };
-		B02A0B2821F8402C00FAC50B /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A0B2721F8402C00FAC50B /* ReachabilityService.swift */; };
+		B00A689021F9C72700DC4BAE /* PVReachability+extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00A688D21F9C72700DC4BAE /* PVReachability+extra.swift */; };
+		B00A689121F9C72700DC4BAE /* PVReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00A688E21F9C72700DC4BAE /* PVReachability.swift */; };
+		B00A689221F9C72700DC4BAE /* PVReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00A688F21F9C72700DC4BAE /* PVReachabilityService.swift */; };
 		B04C437B21F78D81000701C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C437A21F78D81000701C2 /* AppDelegate.swift */; };
 		B04C437D21F78D81000701C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C437C21F78D81000701C2 /* ViewController.swift */; };
 		B04C438021F78D81000701C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B04C437E21F78D81000701C2 /* Main.storyboard */; };
@@ -37,9 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B01255C421F7914400B6328A /* Reachability+extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reachability+extra.swift"; sourceTree = "<group>"; };
-		B01255C521F7914400B6328A /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		B02A0B2721F8402C00FAC50B /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
+		B00A688D21F9C72700DC4BAE /* PVReachability+extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PVReachability+extra.swift"; sourceTree = "<group>"; };
+		B00A688E21F9C72700DC4BAE /* PVReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVReachability.swift; sourceTree = "<group>"; };
+		B00A688F21F9C72700DC4BAE /* PVReachabilityService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVReachabilityService.swift; sourceTree = "<group>"; };
 		B04C437721F78D81000701C2 /* PVReachability.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PVReachability.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B04C437A21F78D81000701C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B04C437C21F78D81000701C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,9 +83,9 @@
 		B01255C321F7914400B6328A /* cls */ = {
 			isa = PBXGroup;
 			children = (
-				B01255C421F7914400B6328A /* Reachability+extra.swift */,
-				B02A0B2721F8402C00FAC50B /* ReachabilityService.swift */,
-				B01255C521F7914400B6328A /* Reachability.swift */,
+				B00A688E21F9C72700DC4BAE /* PVReachability.swift */,
+				B00A688D21F9C72700DC4BAE /* PVReachability+extra.swift */,
+				B00A688F21F9C72700DC4BAE /* PVReachabilityService.swift */,
 			);
 			path = cls;
 			sourceTree = "<group>";
@@ -273,10 +273,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B02A0B2821F8402C00FAC50B /* ReachabilityService.swift in Sources */,
 				B04C437D21F78D81000701C2 /* ViewController.swift in Sources */,
-				B01255C621F7914500B6328A /* Reachability+extra.swift in Sources */,
-				B01255C721F7914500B6328A /* Reachability.swift in Sources */,
+				B00A689121F9C72700DC4BAE /* PVReachability.swift in Sources */,
+				B00A689021F9C72700DC4BAE /* PVReachability+extra.swift in Sources */,
+				B00A689221F9C72700DC4BAE /* PVReachabilityService.swift in Sources */,
 				B04C437B21F78D81000701C2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
